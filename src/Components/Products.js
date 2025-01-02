@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard";
+import TotalPrice from "./TotalPrice";
 
 const products = [
   {
@@ -83,14 +84,18 @@ const products = [
   }
 ];
 
-const Products = () => {
+const Products = ({totalPrice, visibility, handleTotalPrice, handleVisibility}) => {
+  
   return (
     <div className="flex flex-col items-center p-8">
+      <TotalPrice visibility={visibility} totalPrice={totalPrice} />
       <h1 className="text-4xl font-medium self-center mb-8">Your Products</h1>
       <div className="grid grid-cols-5 gap-6">
         {
           products.map((product) => {
-            return <ProductCard key={product.id} title={product.title} description={product.description} price={product.price} colors={product.colors} />
+            return <ProductCard totalPrice={totalPrice} visibility={visibility} handleTotalPrice={handleTotalPrice} handleVisibility={handleVisibility}
+            key={product.id} title={product.title} description={product.description} price={product.price} colors={product.colors} 
+            />
           })
         }
       </div>

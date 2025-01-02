@@ -1,6 +1,9 @@
-const About = () => {
+import TotalPrice from "./TotalPrice";
+
+const About = ({totalPrice, visibility}) => {
   return (
     <div className="bg-white flex flex-col gap-x-4 p-6 mt-8 mx-auto w-11/12 rounded-lg shadow-sm ">
+      <TotalPrice totalPrice={totalPrice} visibility={visibility} />
       <div className="bg-gray-200 flex justify-center text-sm py-8 px-8 text-gray-400 self-start mb-4">
         200x100
       </div>

@@ -1,12 +1,13 @@
 import { useState } from "react";
-const ProductCard = ({title, description, price, colors}) => {
+
+const ProductCard = ({title, description, price, colors, totalPrice, visibility, handleTotalPrice, handleVisibility}) => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
   };
 
-  // background colors to chang the dropdown buttons to
+  // background colors to change the dropdown buttons to
   const getBackgroundColor = (color) => {
     const colorMap = {
       'Black': 'bg-gray-900',
@@ -56,6 +57,10 @@ const ProductCard = ({title, description, price, colors}) => {
         </div>
         <button
           className="bg-blue-600 hover:bg-blue-700 py-2 px-3 text-white rounded-md"
+          onClick={() => {
+            handleTotalPrice(price);
+            handleVisibility("");
+          }}
         >
           buy
         </button>
