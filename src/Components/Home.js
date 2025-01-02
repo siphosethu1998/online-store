@@ -19,7 +19,7 @@ const Home = () => {
   },[userInput])
 
   return (
-    <div className="bg-white flex gap-x-4 p-6 mx-auto w-fit rounded-lg shadow-sm items-center">
+    <div className="bg-white flex gap-x-4 p-6 mt-8 mx-auto w-fit rounded-lg shadow-sm items-center">
       { name === "" ? 
       <input
         ref={inputRef}
