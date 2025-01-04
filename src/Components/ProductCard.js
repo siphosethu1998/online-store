@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProductCard = ({title, description, price, colors, totalPrice, visibility, handleTotalPrice, handleVisibility}) => {
+const ProductCard = ({title, image, description, price, colors, totalPrice, visibility, handleTotalPrice, handleVisibility}) => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   const handleColorChange = (color) => {
@@ -27,9 +27,11 @@ const ProductCard = ({title, description, price, colors, totalPrice, visibility,
 
   return (
     <div className="bg-white w-fit rounded shadow">
-      <div className="flex justify-center items-center text-lg font-medium rounded-t bg-gray-800 text-gray-400 w-72 h-48">
-        286x180
-      </div>
+      <img 
+        src={image} 
+        className="h-44 w-72 rounded-t-sm"
+        alt="product-item"
+      />
       <div className="flex flex-col gap-y-3 px-4 py-6">
         <h1 className="font-medium text-xl">{ title }</h1>
         <p className="w-64">{ description }</p>
