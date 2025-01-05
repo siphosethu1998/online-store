@@ -4,12 +4,14 @@ import * as Yup from 'yup';
 
 const LoginForm = () => {
   const inputRef = useRef(null);
+  // formik hook to create and validated the form
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema: Yup.object({ // valdating the data using a validation schema
+      email: Yup.string().email("Invalid email address").required("Email is required"),
       password: Yup.string()
         .min(8, "Password should be at least 8 characters")
         .required("Password is required")

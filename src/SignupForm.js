@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 
 const SignupForm = () => {
   const inputRef = useRef(null);
+  // formik hook to create and validated the form
   const formik = useFormik({
     initialValues: {
       firstName:"",
