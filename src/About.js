@@ -9,7 +9,7 @@ const About = ({totalPrice, visibility}) => {
       <div className="bg-gray-200 flex justify-center text-sm py-8 px-8 text-gray-400 self-start mb-4">
         200x100
       </div>
-      <h1 className="text-2xl font-bold">About out Store</h1>
+      <h1 className="text-2xl font-bold">About our Store</h1>
       <p className="my-6">Welcome to TechGear, your premier destination for high-quality office and tech accessories. We pride ourselves on offering innovative products that enhance your workspace and productivity.</p>
       {/* placeholder company image */}
       <div className="bg-gray-200 mb-6 flex w-72 h-72 justify-center items-center  shadow-md rounded-md text-4xl py-8 px-8 text-gray-400 self-start">
