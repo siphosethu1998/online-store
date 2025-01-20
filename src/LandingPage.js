@@ -1,26 +1,6 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
-  const [name, setName] = useState(""); 
-  const [userInput, setUserInput] = useState(""); 
-  const inputRef = useRef(null);
-
-  {/* don't need this section right now 
-  const handleLogin = () => {
-    setName(userInput);
-  }
-
-  const handleLogout = () => {
-    setName("");
-    setUserInput("");
-  }
-
-  useEffect(() => {
-    inputRef.current.focus();
-  },[userInput])
-  */}
-
   return (
     <div className="flex flex-col justify-center bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen text-white">
       <div className="container mx-auto px-4 py-16">

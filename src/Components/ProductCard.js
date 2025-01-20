@@ -1,11 +1,19 @@
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import { addToCart } from "../store/productState";
+import { useDispatch, useSelector } from "react-redux";
 
-const ProductCard = ({title, image, description, price, colors, totalPrice, visibility, handleTotalPrice, handleVisibility}) => {
+const ProductCard = ({ title, image, description, price, colors}) => {
+  const { cartItems } = useSelector(state => state.products);
+  const dispatch = useDispatch();
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ id: cartItems.length+1, itemImage: image, itemTitle: title, itemPrice: price, itemSelectedColor: selectedColor }));
   };
 
   // background colors to change the dropdown buttons to
@@ -25,11 +33,6 @@ const ProductCard = ({title, image, description, price, colors, totalPrice, visi
     };
     return colorMap[color] || 'bg-gray-200';
   };
-
-  const handleBuy = () => {
-    handleTotalPrice(price);
-    handleVisibility("");
-  }
 
   return (
     <div className="bg-white w-fit rounded shadow">
@@ -62,10 +65,11 @@ const ProductCard = ({title, image, description, price, colors, totalPrice, visi
           </div>
         </div>
         <button
-          className="bg-blue-600 hover:bg-blue-700 py-2 px-3 text-white rounded-md"
-          onClick={handleBuy}
+          className="bg-blue-600 hover:bg-blue-700 flex justify-center items-center gap-x-2 py-2 px-3 text-white rounded-md"
+          onClick={handleAddToCart}
         >
-          buy
+          <ShoppingCartIcon  className="size-5"/>
+          <span>Add to cart</span>
         </button>
       </div>
     </div>

@@ -1,22 +1,16 @@
-import TotalPrice from "./Components/TotalPrice";
-
 // About component with props for totalPrice and visibility
-const About = ({totalPrice, visibility}) => {
+const About = () => {
   return (
     <div className="bg-white flex flex-col gap-x-4 p-8 mt-8 mx-auto w-11/12 rounded-lg shadow-sm">
-      {/* placeholder company logo */}
-      <div className="bg-gray-200 flex justify-center text-sm py-8 px-8 text-gray-400 self-start mb-4">
-        200x100
-      </div>
+      <img src="/techgear_logo.jpg" alt="inside a tech store" className="h-28 w-28 mb-4 rounded-md" />
       <h1 className="text-2xl font-bold">About our Store</h1>
       <p className="my-6">Welcome to TechGear, your premier destination for high-quality office and tech accessories. We pride ourselves on offering innovative products that enhance your workspace and productivity.</p>
-      {/* placeholder company image */}
-      <div className="bg-gray-200 mb-6 flex w-72 h-72 justify-center items-center  shadow-md rounded-md text-4xl py-8 px-8 text-gray-400 self-start">
-        400x300
-      </div>
-      {/* placeholder company image */}
-      <div className="bg-gray-200 mb-6 flex w-72 h-72 justify-center items-center  shadow-md rounded-md text-4xl py-8 px-8 text-gray-400 self-start">
-        400x300
+      <div className="flex gap-x-10">
+        <img src="/TechGear_image.jpg" alt="inside a tech store" className="h-72 w-72 mb-4 rounded-md shadow-md" />
+        {/* placeholder company image */}
+        <div className="bg-gray-200 mb-6 flex w-72 h-72 justify-center items-center  shadow-md rounded-md text-4xl py-8 px-8 text-gray-400 self-start">
+          400x300
+        </div>
       </div>
       <div className="bg-gray-50 px-6 py-8 rounded-md">
         <h3 className="text-xl font-bold mb-4">Contact Us</h3>
