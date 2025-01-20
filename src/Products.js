@@ -89,8 +89,7 @@ const Products = ({totalPrice, visibility, handleTotalPrice, handleVisibility}) 
   
   return (
     <div className="flex flex-col items-center p-8">
-      <TotalPrice visibility={visibility} totalPrice={totalPrice} />
-      <h1 className="text-4xl font-medium self-center mb-8">Your Products</h1>
+      <h1 className="text-4xl font-medium self-center mb-8">Store Products</h1>
       <div className="grid grid-cols-5 gap-6">
         {
           products.map((product) => {

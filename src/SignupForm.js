@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { Link } from "react-router-dom";
 
 const SignupForm = () => {
   const inputRef = useRef(null);
@@ -38,8 +39,13 @@ const SignupForm = () => {
   },[])
 
   return (
-    <div className="bg-white flex gap-x-4 p-6 mt-8 mx-auto w-fit rounded-lg shadow-sm items-center">
-      <form onSubmit={formik.handleSubmit} className="flex flex-col gap-y-2">
+    <div className="flex flex-col gap-8 items-center mt-8">
+      <div className="flex flex-col gap-4">
+        <p className="text-3xl font-medium">Register for free</p> 
+        <span className="self-center">Or </span> 
+        <Link to="/login" className="text-gray-700 self-center font-medium underline">Login to your existing account</Link>
+      </div>
+      <form onSubmit={formik.handleSubmit} className="flex flex-col gap-y-2 bg-white gap-x-4 p-6 mx-auto w-fit rounded-lg shadow-sm">
         <label htmlFor="firstName">First Name</label>
         <input
           className="px-4 py-2 w-80 focus:outline-none border border-gray-200 rounded-md" 

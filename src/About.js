@@ -3,8 +3,7 @@ import TotalPrice from "./Components/TotalPrice";
 // About component with props for totalPrice and visibility
 const About = ({totalPrice, visibility}) => {
   return (
-    <div className="bg-white flex flex-col gap-x-4 p-6 mt-8 mx-auto w-11/12 rounded-lg shadow-sm ">
-      <TotalPrice totalPrice={totalPrice} visibility={visibility} />
+    <div className="bg-white flex flex-col gap-x-4 p-8 mt-8 mx-auto w-11/12 rounded-lg shadow-sm">
       {/* placeholder company logo */}
       <div className="bg-gray-200 flex justify-center text-sm py-8 px-8 text-gray-400 self-start mb-4">
         200x100
