@@ -7,10 +7,7 @@ const About = () => {
       <p className="my-6">Welcome to TechGear, your premier destination for high-quality office and tech accessories. We pride ourselves on offering innovative products that enhance your workspace and productivity.</p>
       <div className="flex gap-x-10">
         <img src="/TechGear_image.jpg" alt="inside a tech store" className="h-72 w-72 mb-4 rounded-md shadow-md" />
-        {/* placeholder company image */}
-        <div className="bg-gray-200 mb-6 flex w-72 h-72 justify-center items-center  shadow-md rounded-md text-4xl py-8 px-8 text-gray-400 self-start">
-          400x300
-        </div>
+        <img src="/TechGear_image2.jpg" alt="inside a tech store" className="h-72 w-72 mb-4 rounded-md shadow-md" />
       </div>
       <div className="bg-gray-50 px-6 py-8 rounded-md">
         <h3 className="text-xl font-bold mb-4">Contact Us</h3>

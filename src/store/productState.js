@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const productSlice = createSlice({
   name: "products",
   initialState: {
-    totalPrice: 0,
     cartItems : [],
     techProducts : 
     [ // list of 10 fictional tech products, images were found on the web
@@ -92,11 +91,9 @@ const productSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       state.cartItems.push(action.payload);
-      state.totalPrice += action.payload.itemPrice;
     },
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(product => product.id !== action.payload.id);
-      state.totalPrice -= action.payload.itemPrice; // subtraction amount of the removed item from the total price
     }
   }
 });

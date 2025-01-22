@@ -35,10 +35,10 @@ const ProductCard = ({ title, image, description, price, colors}) => {
   };
 
   return (
-    <div className="bg-white w-fit rounded shadow">
+    <div className="bg-white w-fit rounded-lg shadow">
       <img 
         src={image} 
-        className="h-44 w-72 rounded-t-sm"
+        className="h-44 w-72 rounded-t-lg"
         alt="product-item"
       />
       <div className="flex flex-col gap-y-3 px-4 py-6">
