@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from "react-redux";
-import { verifyUser } from "./store/productState";
+import { verifyUser } from "../store/productState";
 
 const LoginForm = () => {
   const dispatch = useDispatch();

@@ -1,11 +1,11 @@
 import {Routes, Route} from 'react-router-dom'
 import NavBar from './Components/NavBar';
-import LandingPage from './LandingPage';
-import About from './About';
-import Products from './Products';
-import Cart from './Cart';
-import LoginForm from './LoginForm';
-import SignupForm from './SignupForm';
+import LandingPage from './pages/LandingPage';
+import About from './pages/About';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
+import LoginForm from './pages/LoginForm';
+import SignupForm from './pages/SignupForm';
 
 function App() {
 

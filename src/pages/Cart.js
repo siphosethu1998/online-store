@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { InformationCircleIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { removeFromCart } from "./store/productState";
+import { removeFromCart } from "../store/productState";
 import { useState } from "react";
 
 // Shipping methods data
@@ -58,7 +58,7 @@ const Cart = () => {
         }
       </div>
       {/* shipping method card */}
-      <div className={`${(cartItems.length > 0) ? "": "hidden"} bg-white flex flex-col gap-6 p-8 mx-auto w-11/12 rounded-lg shadow-sm mt-8`}>
+      <div className={`${(cartItems.length > 0 && isLoggedIn) ? "": "hidden"} bg-white flex flex-col gap-6 p-8 mx-auto w-11/12 rounded-lg shadow-sm mt-8`}>
         <div className="flex justify-between">
           <h2 className="font-medium text-xl">Shipping Method</h2>
           <button
@@ -115,7 +115,7 @@ const Cart = () => {
         </section>
       </div>
       {/* order summary card and information */}
-      <div className={`${(cartItems.length > 0) ? "": "hidden"} bg-white flex flex-col gap-6 p-8 mx-auto w-11/12 rounded-lg shadow-sm mt-8`}>
+      <div className={`${(cartItems.length > 0 && isLoggedIn) ? "": "hidden"} bg-white flex flex-col gap-6 p-8 mx-auto w-11/12 rounded-lg shadow-sm mt-8`}>
         <h2 className="font-medium text-xl">Order Summary</h2>
         <div className="flex flex-col gap-2 border-b border-gray-200 pb-3">
           <div className="flex justify-between">

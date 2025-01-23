@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import ProductCard from "./Components/ProductCard";
+import ProductCard from "../Components/ProductCard";
 
 const Products = () => {
   const { username, isLoggedIn, techProducts } = useSelector(state => state.products);

@@ -1,13 +1,18 @@
 ## About Project
-- This is a fictional e-commerce website that users can interact with to buy tech gadgets and view them on the cart with the option to select a shipping method.
+- This is a fictional e-commerce website that users can interact with to buy tech gadgets and view them on the cart with the option to select a shipping method. You can only add items to cart when you have registered and logged in using your login details. 
 
-## Tech Stack
+## Tech Stack 
 - React
 - Tailwindcss
 - Redux with Redux toolkit
 - React Router
 - Heroicons
 - Formik (form library)
+
+## Features
+- User can register and Login
+- User Can add items to cart
+
 
 # Getting Started with Create React App
 

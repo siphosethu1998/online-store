@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addUser } from "./store/productState";
+import { addUser } from "../store/productState";
 
 const SignupForm = () => {
   const inputRef = useRef(null);
@@ -37,7 +37,7 @@ const SignupForm = () => {
         .required("Please confirm your password")
     }),
     onSubmit: values => {
-      alert(JSON.stringify(values,null, 2));
+      //alert(JSON.stringify(values,null, 2));
       dispatch(addUser(values));
       navigate("/login"); // sends the user to the login page after they register
     }
