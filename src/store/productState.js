@@ -4,6 +4,9 @@ const productSlice = createSlice({
   name: "products",
   initialState: {
     cartItems : [],
+    userAccounts : [],
+    isLoggedIn: false,
+    username: "", // username that will displayed in the header component when user is verified
     techProducts : 
     [ // list of 10 fictional tech products, images were found on the web
       {
@@ -89,17 +92,38 @@ const productSlice = createSlice({
     ],
   },
   reducers: {
+    addUser: (state, action) => {
+      state.userAccounts.push(action.payload);
+    },
+    setisLoggedIn : (state, action) => {
+      state.isLoggedIn = Boolean(action.payload);
+    },
+    setUsername : (state, action) => {
+      state.username = action.payload;
+    },
+    verifyUser: (state, action) => {
+      const user = state.userAccounts.find(user => user.username === action.payload.username);
+
+      // check if the passowrd is the same as the password stored in userAccounts 
+      if(user.password === action.payload.password){
+        state.isLoggedIn = true;
+        state.username = action.payload.username;
+      };
+    },
     addToCart: (state, action) => {
       state.cartItems.push(action.payload);
     },
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(product => product.id !== action.payload.id);
+    },
+    // remove all items from cart when the user logs out
+    resetCart: (state) => { 
+      state.cartItems = [];
     }
   }
 });
 
 // export action functions to used in components
-export const { setTotalPrice, addToCart, removeFromCart } = productSlice.actions;
+export const { addToCart, removeFromCart, addUser, verifyUser, setisLoggedIn, resetCart } = productSlice.actions;
 
-// export action functions to used in components
 export default productSlice.reducer;

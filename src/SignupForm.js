@@ -1,15 +1,21 @@
 import { useEffect, useRef } from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "./store/productState";
 
 const SignupForm = () => {
   const inputRef = useRef(null);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   // formik hook to create and validated the form
   const formik = useFormik({
     initialValues: {
       firstName:"",
       surname:"",
+      username:"",
       email:"",
       password:"",
       confirmPassword:""
@@ -17,6 +23,7 @@ const SignupForm = () => {
     validationSchema: Yup.object({ // validating the form values
       firstName: Yup.string().max(15, "Name must be 15 charcters or less").required("First name is required"),
       surname: Yup.string().max(20, "Surname must be 20 charcters or less").required("Surname is required"),
+      username: Yup.string().max(20, "Username must be 20 charcters or less").required("Username is required"),
       email: Yup.string().email("Invalid email address").required("Email is required"),
       password: Yup.string()
         .min(8, "Password should be at least 8 characters")
@@ -31,6 +38,8 @@ const SignupForm = () => {
     }),
     onSubmit: values => {
       alert(JSON.stringify(values,null, 2));
+      dispatch(addUser(values));
+      navigate("/login"); // sends the user to the login page after they register
     }
   });
 
@@ -77,6 +86,22 @@ const SignupForm = () => {
         { 
           formik.touched.surname && formik.errors.surname ? 
           <div className="text-red-600">{ formik.errors.surname }</div>: null 
+        }
+
+        <label htmlFor="username">Username</label>
+        <input
+          className="px-4 py-2 w-80 focus:outline-none border border-gray-200 rounded-md" 
+          id="username"
+          name="username"
+          type="text"
+          placeholder="Enter your username"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.username}
+        />
+        { 
+          formik.touched.username && formik.errors.username ? 
+          <div className="text-red-600">{ formik.errors.username }</div>: null 
         }
 
         <label htmlFor="email">Email</label>

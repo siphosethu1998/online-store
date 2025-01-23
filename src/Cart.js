@@ -11,7 +11,7 @@ const shippingMethods = [
 ];
 
 const Cart = () => {
-  const { cartItems } = useSelector(state => state.products);
+  const { isLoggedIn, cartItems } = useSelector(state => state.products);
   const [showShippingInfo, setShowShippingInfo] = useState(false);
   const [selectedShippingCost, setSelectedShippingCost] = useState(0);
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Cart = () => {
       {/* cart items' section showing all the products that are added to the cart, or an empty cart message to the user */}
       <div className="flex flex-col gap-4 w-11/12">
         { 
-          (cartItems.length > 0) ?
+          (cartItems.length > 0 && isLoggedIn) ?
           cartItems.map((item) => {
             return (
               // Cart item card component
@@ -74,7 +74,7 @@ const Cart = () => {
           {
             shippingMethods.map(shippingMethod => {
               return (
-                <div>
+                <div key={shippingMethod.id}>
                   <h6 className="font-medium">{shippingMethod.name}:</h6>
                   <ul className="list-disc pl-10">
                     <li>Delivery time: {shippingMethod.time}</li>
