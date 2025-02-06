@@ -13,7 +13,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className="flex justify-between items-center gap-x-8 p-6 font-medium bg-blue-600 text-white shadow-lg">
+    <div className="flex justify-between items-center gap-x-8 p-6 font-medium bg-blue-600 text-white shadow-lg fixed w-full top-0">
       <Link to="/" className="flex gap-x-2 text-2xl">
         <img src="/techgear_logo.jpg" alt="logo" className="h-8 w-12 rounded-md"/> <span>Tech Gear</span>
       </Link>

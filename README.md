@@ -3,6 +3,10 @@
 
 Link to Live demo : https://online-tech-store.onrender.com/products
 
+## Features
+- User can register and Login
+- User Can add items to cart once logged in
+
 ## Tech Stack 
 - React
 - Tailwindcss
@@ -10,11 +14,6 @@ Link to Live demo : https://online-tech-store.onrender.com/products
 - React Router
 - Heroicons
 - Formik (form library)
-
-## Features
-- User can register and Login
-- User Can add items to cart once logged in
-
 
 ## Available Scripts
 
