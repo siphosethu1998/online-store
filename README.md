@@ -1,5 +1,7 @@
 ## About Project
-- This is a fictional e-commerce website that users can interact with to buy tech gadgets and view them on the cart with the option to select a shipping method. You can only add items to cart when you have registered and logged in using your login details. 
+- This is a fictional e-commerce website that users can interact with to buy tech gadgets and view them on the cart with the option to select a shipping method. You can only add items to cart when you have registered and logged in using your login details. You have to log in order to add items to cart
+
+Link to Live demo : https://online-tech-store.onrender.com/products
 
 ## Tech Stack 
 - React
@@ -11,12 +13,8 @@
 
 ## Features
 - User can register and Login
-- User Can add items to cart
+- User Can add items to cart once logged in
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
