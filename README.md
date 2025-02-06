@@ -1,7 +1,7 @@
 ## About Project
 - This is a fictional e-commerce website that users can interact with to buy tech gadgets and view them on the cart with the option to select a shipping method. You can only add items to cart when you have registered and logged in using your login details. You have to log in order to add items to cart
 
-Link to Live demo : https://online-tech-store.onrender.com/products
+Link to Live demo : https://online-tech-store.onrender.com/
 
 ## Features
 - User can register and Login
